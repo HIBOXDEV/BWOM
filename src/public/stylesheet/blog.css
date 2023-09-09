@@ -1,0 +1,439 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-lt');
+
+.about-us {
+    /* ...otros estilos... */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease;
+}
+
+.about-us.visible {
+    opacity: 1; /* Visible cuando se quita la clase "visible" */
+}
+
+
+*{
+
+
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+a{
+    font-family:  "Outfit", sans-serif;
+    color:#747474;
+    text-decoration: none;
+    font-size: 1.125rem;
+
+}
+
+
+
+nav{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0.1px #e5e7eb solid;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+   height: 65px;
+    padding: 0  30px;
+    border-right: 0.01px #e5e7eb solid;
+}
+.logo-wrapper img{
+    width: 120px;
+    height: 120px;
+}
+
+.navlinks-wrapper {
+    margin-left: 10px;
+} 
+
+/* Estilo para los enlaces del menú */
+.navlinks-wrapper a {
+    position: relative; /* Establece la posición como relativa */
+    text-decoration: none;
+    color: #666; /* Color inicial en gris */
+    margin: 0 20px; /* Agrega margen horizontal entre los enlaces */
+    transition: color 0.3s ease; /* Agrega una transición suave para el color del texto */
+}
+
+/* Estilo para el pseudo-elemento ::after (el círculo) */
+.navlinks-wrapper a::after {
+    content: "";
+    width: 7px; /* Ancho del círculo */
+    height: 7px; /* Altura del círculo */
+    background-color: rgb(247, 145, 41); /* Color del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo */
+    position: absolute;
+    bottom: -20px; /* Ajusta la distancia desde abajo a 0 para alinear con el borde inferior del nav */
+    left: 50%; /* Centra el círculo horizontalmente */
+    transform: translateX(-50%); /* Centra el círculo horizontalmente */
+    opacity: 0; /* Inicialmente, el círculo no es visible */
+    transition: opacity 0.3s ease; /* Agrega una transición suave para la aparición/desaparición */
+}
+
+/* Estilo para mostrar el círculo y cambiar el color del enlace cuando se hace clic */
+.navlinks-wrapper a:active::after,
+.navlinks-wrapper a:focus::after {
+    opacity: 1;
+}
+
+/* Cambia el color del enlace cuando se hace clic */
+.navlinks-wrapper a:active,
+.navlinks-wrapper a:focus {
+    color: #000; /* Cambia el color del texto a negro cuando se hace clic */
+}
+
+
+.hero-wrapper {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(102, 94, 94, 0), rgba(87, 83, 83, 0.5)), url(/images/checker.png);
+    background-position: center;
+    background-size: contain;
+}
+
+
+.hero-wrapper img{
+ width: 600px;
+ height: 600px;
+animation: moveFromLeft 2s ease-in-out, heartbeat 0.5s ease-in-out 2s infinite;
+   
+
+}
+
+
+
+
+
+
+
+
+.hero2-wrapper{
+    width: 100%;
+    
+   background-color:  rgba(232, 236, 241, 0.6);
+}
+
+
+#welcomingtext {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: "Outfit";
+    font-size: 70px;
+    position: relative; /* Añade posición relativa para el subrayado */
+}
+
+#welcomingtext::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Ajusta la distancia vertical entre el texto y el subrayado */
+    left: 50%; /* Coloca el inicio del subrayado en el centro */
+    transform: translateX(-50%); /* Centra el subrayado horizontalmente */
+    width: 60%; /* Ancho del subrayado (ajusta según tu preferencia) */
+    height: 3px; /* Grosor del subrayado */
+    background-color: #e5e7eb ; /* Color del subrayado */
+    
+}
+
+
+
+#welcomingtext span{
+    color: rgb(247, 145, 41);
+}
+
+
+.recent-blogs {
+    border-radius: 10px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(216, 218, 221, 0.363); /* Cambia el valor de alfa (0.6) para ajustar la transparencia */
+    height: 400px;
+    padding: 80px;
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.74);
+}
+
+.recent-blogs {
+    position: relative;
+    left: -100%; /* Empieza fuera de la pantalla a la izquierda */
+    opacity: 0; /* Inicialmente invisible */
+    transition: left 1s ease, opacity 1s ease; /* Agrega una transición suave */
+}
+
+/* Agrega una clase "show" para activar la animación */
+.recent-blogs.show {
+    left: 0; /* Mueve el elemento al centro de la pantalla */
+    opacity: 1; /* Hace el elemento visible */
+}
+
+
+.first-recent img{
+    width: 300px;
+    height: 300px;
+    border-radius: 35px;
+    filter: blur(0.5px);
+    box-shadow: 0px 5px 40px rgb(247, 145, 41);
+}
+.second-recent{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Outfit";
+}
+
+.second-recent span{
+    text-align: left;
+    color: rgb(247, 145, 41);
+    font-weight: 300;
+
+}
+
+.second-recent  h2{
+    font-size: 50px;
+}
+.second-recent p {
+    font-size: 20px;
+}
+
+.second-recent button {
+    margin-top: 10px;
+    border-radius: 50px;
+   
+    border: none;
+    background-color: rgb(247, 145, 41);
+    width: 130px;
+    height: 50px;
+}
+
+.second-recent  a{
+    color: #000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about-us{
+    margin-top: 40px;
+    border-radius: 10px;
+    padding: 50px;
+    font-family: "Outfit";
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.445), rgba(247, 145, 41, 0.2));
+    box-shadow:  0px 5px 30px rgba(184, 107, 30, 0.178);
+}
+.about-us p{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.about-us span{
+    color: rgb(247, 145, 41);
+}
+
+.about-us img{
+
+border-radius: 50px;
+
+}
+
+
+.award-wrapper{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: "Outfit";
+}
+
+.awardbtn {
+    border-radius: 30px;
+    background-color: rgb(247, 145, 41);
+    width: 210px;
+    height: 80px;
+    border: #523D29 5px solid;
+}
+
+.awardbtn a{
+    color: white;
+    font-size: 30px;
+    font-family: "Outfit";
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.discord-wrapper{
+    border: rgb(240, 120, 0) 3px solid; 
+    padding: 1px;
+    background-size: contain;
+    border-radius: 30px;
+    background-image: url(/images/checkertrans.png);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.discord-wrapper span{
+    font-weight: 900;
+    font-size: 37px;
+    color: rgb(247, 145, 41);
+    -webkit-text-stroke: 2px #1d1b1b; 
+    font-family: "futura LT";
+}
+
+
+
+
+.sim-wrapper{
+    border: rgb(240, 120, 0) 3px solid; 
+    background-size: contain;
+    border-radius: 30px;
+    background-image: url(/images/checker.png);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.simtext{
+    text-align: center;
+}
+
+
+.simtext{
+    font-weight: 900;
+    font-size: 37px;
+    color: rgb(247, 145, 41);
+    -webkit-text-stroke: 2px #1d1b1b; 
+    font-family: "futura LT";
+}
+.sim-wrapper img{
+    border-radius: 70px;
+    width: 193px;
+    height: 193px;
+
+}
+
+
+
+
+.roblox-wrapper{
+    border: rgb(240, 120, 0) 3px solid; 
+    padding: 1px;
+    background-size: contain;
+    border-radius: 30px;
+    background-image: url(/images/checkertrans.png);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.roblox-wrapper span{
+    font-weight: 900;
+    font-size: 32px;
+    color: rgb(247, 145, 41);
+    -webkit-text-stroke: 2px #1d1b1b; 
+    font-family: "futura LT";
+}
+
+
+
+
+
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(247, 145, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkfooter , .linkfooter1 {
+    text-decoration: underline;
+    color: white;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.linkfooter  a{
+    color: white;
+    margin-top: 10px;
+}
+.linkfooter1  a{
+    color: white;
+    margin-top: 10px;
+}
+.copy  {
+    font-family: "Outfit";
+    font-size: 15px;
+}
+
+
+
+@keyframes moveFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) scale(0.2) ;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) ;
+    }
+}
