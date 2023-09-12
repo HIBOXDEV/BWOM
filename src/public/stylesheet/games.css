@@ -144,11 +144,11 @@ nav{
     flex-direction: row; /* Alinea los elementos en línea */
     justify-content: space-between; /* Distribuye los elementos en el espacio disponible */
     width: 100%;
-   
+   width: 100%;
 }
 
 .grocerygame {
-    
+    width: 100%;
     font-family: "Outfit";
     padding: 50px;
     display: flex;
