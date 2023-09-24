@@ -3,17 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/futura-lt');
 
-.about-us {
-    /* ...otros estilos... */
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 0.5s ease;
+.about-us{
+    position: relative;
+    left: -100%; /* Empieza fuera de la pantalla a la izquierda */
+    opacity: 0; /* Inicialmente invisible */
+    transition: left 1s ease, opacity 1s ease; /* Agrega una transición suave */
 }
 
-.about-us.visible {
-    opacity: 1; /* Visible cuando se quita la clase "visible" */
+.about-us.show {
+    left: 0; /* Mueve el elemento al centro de la pantalla */
+    opacity: 1; /* Hace el elemento visible */
 }
-
-
 *{
 
 

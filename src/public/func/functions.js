@@ -41,6 +41,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    const recentBlogsElement = document.querySelector(".about-us");
+    const scrollPositionToShowRecentBlogs = window.innerHeight / 2; // Aparece cuando la mitad de la sección es visible
+    
+    window.addEventListener("scroll", function() {
+        const rect = recentBlogsElement.getBoundingClientRect();
+        if (rect.top <= scrollPositionToShowRecentBlogs) {
+            recentBlogsElement.classList.add("show");
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const groceryGameElement = document.querySelector(".grocerygame");
 
     // Agregar la clase "show" al elemento después de un retraso (por ejemplo, 2 segundos)
