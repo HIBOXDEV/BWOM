@@ -354,14 +354,30 @@ border-radius: 50px;
 
 .roblox-wrapper{
     
+     /* Hace que este elemento ocupe todo el espacio vertical disponible */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center; /* Centra verticalmente los elementos internos */
+    align-items: center; /* Centra horizontalmente los elementos internos */
+    text-align: center;
+   
     background-image: url(/images/redbkr.png);
+    background-size: cover;
     width: 300px;
     height: 400px;
     
+}
+
+
+
+
+
+
+
+
+.roblox-wrapper img{
+    width: 150px;
+    height: 150px;
 }
 
 
@@ -372,7 +388,7 @@ border-radius: 50px;
     font-weight: 900;
 }
 .roblox-wrapper button{
-    margin-top: 160px;
+    margin-top: 50px;
     width: 200px;
     height: 80px;
     border-radius: 30px;
